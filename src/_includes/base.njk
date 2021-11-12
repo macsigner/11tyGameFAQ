@@ -8,7 +8,6 @@
     <meta name="robots" content="noindex,nofollow">
     <link rel="stylesheet" href="{{ '/assets/css/reset.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
-    <script src="{{ '/assets/js/scripts.js' | url }}"></script>
 </head>
 <body>
 <header class="main-header">
@@ -21,7 +20,9 @@
                     <li><a href="{{ page.url }}" data-title="{{ page.data.title }}">{{ page.data.title }}</a></li>
                 {%- endfor %}
                 {% for walkthrough in collections.walkthroughs %}
-                    <li><a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a></li>
+                    <li>
+                        <a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a>
+                    </li>
                 {%- endfor %}
             </ul>
         </nav>
@@ -47,5 +48,6 @@
         </address>
     {% endblock %}
 </footer>
+<script src="{{ '/assets/js/scripts.js' | url }}"></script>
 </body>
 </html>
