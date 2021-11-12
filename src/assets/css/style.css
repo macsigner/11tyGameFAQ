@@ -20,6 +20,9 @@
     --color-text: #102B40;
     --accent-color: var(--color-blue);
 
+    --color: var(--color-text);
+    --bg-color: var(--color-white);
+
     --font-family: 'Source Code';
     --font-size: 1.8rem;
     --font-weight-bold: 700;
@@ -36,7 +39,7 @@
 html {
     font-size: 62.5%;
     color: var(--color-text);
-    background-color: var(--color-white);
+    background-color: var(--bg-color);
 }
 
 body {
@@ -80,6 +83,16 @@ h6 {
     font-size: var(--font-size);
     line-height: var(--line-height);
     font-weight: 900;
+}
+
+h1:target,
+h2:target,
+h3:target,
+h4:target,
+h5:target,
+h6:target {
+    color: var(--bg-color);
+    background-color: var(--color);
 }
 
 h1 {
@@ -233,4 +246,26 @@ body > footer h5 {
     content: counter(list-count) '.\00a0';
     counter-increment: list-count;
     text-align: right;
+}
+
+.title-counter {
+    counter-reset: h2-count h3-count h4-count h5-count h6-count;
+}
+
+.title-counter h2 {
+    counter-increment: h2-count;
+    counter-reset: h3-count h4-count h5-count h6-count;
+}
+
+.title-counter h2::before {
+    content: counter(h2-count) '\00a0';
+}
+
+.title-counter h3 {
+    counter-increment: h3-count;
+    counter-reset: h4-count h5-count h6-count;
+}
+
+.title-counter h3::before {
+    content: counter(h2-count) '.' counter(h3-count) '\00a0';
 }

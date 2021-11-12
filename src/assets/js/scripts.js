@@ -6,8 +6,9 @@ document.documentElement.classList.add('js');
 class UnderlineVars {
     constructor(el) {
         this.el = el;
-        this.el.style.setProperty('--underlines', this.getLengthAsSymbol())
-        this.el.style.setProperty('--lines', this.getLengthAsSymbol())
+        this.el.style.setProperty('--underlines', this.getLengthAsSymbol());
+        this.el.style.setProperty('--lines', this.getLengthAsSymbol('-'));
+        this.el.style.setProperty('--hashes', this.getLengthAsSymbol('#'));
     }
 
     getLengthAsSymbol(strSymbol = '_') {
