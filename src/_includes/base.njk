@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schofseckel | {{ pageTitle }}</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="{{ '/assets/css/reset.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+    <script src="{{ '/assets/js/scripts.js' | url }}"></script>
+</head>
+<body>
+<header class="main-header">
+    {% block header %}
+        <p><a href="/">Walkthroughs</a></p>
+        <nav>
+            <ul>
+                <li><a href="./">Home</a></li>
+                {% for page in collections.pages %}
+                    <li><a href="{{ page.url }}" data-title="{{ page.data.title }}">{{ page.data.title }}</a></li>
+                {%- endfor %}
+                {% for walkthrough in collections.walkthroughs %}
+                    <li><a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a></li>
+                {%- endfor %}
+            </ul>
+        </nav>
+    {% endblock %}
+</header>
+<main>
+    {% block main %}
+        {{ content | safe }}
+    {% endblock %}
+</main>
+<footer>
+    {% block footer %}
+        <aside>
+            <h5>Why?</h5>
+            <p>I like plain text walkthroughs but... they are difficult to navigate.</p>
+        </aside>
+        <address>
+            <h5>Impressum</h5>
+            <p><strong>Mac Signer</strong> <br>
+                Kaustrasse 16 <br>
+                9050 Appenzell <br>
+                mac@schofseckel.ch</p>
+        </address>
+    {% endblock %}
+</footer>
+</body>
+</html>

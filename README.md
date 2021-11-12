@@ -1,0 +1,1 @@
+# Schofseckel Blog Doc
