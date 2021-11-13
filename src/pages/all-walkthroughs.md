@@ -5,8 +5,7 @@ accesskey: w
 
 Available Walkthroughs
 
-{% for walkthrough in collections.walkthroughs %}
-- {{ walkthrough.data.title }}
+{% for item in collections.walkthroughs %}
+- [{{ item.data.title }}]({{ item.data.page.url }})
 {% endfor %}
 
-test
