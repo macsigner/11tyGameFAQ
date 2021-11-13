@@ -238,6 +238,10 @@ body > header > p {
     text-align: right;
 }
 
+.table-list ul > li::before {
+    content: '-\00a0';
+}
+
 .title-counter {
     counter-reset: h2-count h3-count h4-count h5-count h6-count;
 }
