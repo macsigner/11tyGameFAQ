@@ -14,7 +14,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setLibrary(
         'md',
-        markdownIt().use(markdownItAnchor)
+        markdownIt({
+            html: true,
+        }).use(markdownItAnchor)
     )
     eleventyConfig.addPassthroughCopy('./src/assets/');
     eleventyConfig.addPassthroughCopy({
