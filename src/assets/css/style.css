@@ -202,6 +202,7 @@ body > header > p {
 .main-navigation [accesskey] {
     display: flex;
 }
+
 .main-navigation [accesskey]::before {
     content: '^' attr(accesskey);
     display: block;
@@ -262,4 +263,16 @@ body > header > p {
 
 .title-counter h3::before {
     content: counter(h2-count) '.' counter(h3-count) '\00a0';
+}
+
+.title-wrap h3 {
+    border: 1em solid transparent;
+    border-image-source: url('data:image/svg+xml;utf8,<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="border-1"><text text-anchor="middle" alignment-baseline="central" x="8" y="8" class="border-icon">o</text> <text text-anchor="middle" alignment-baseline="central" x="24" y="8" class="border-icon">-</text> <text text-anchor="middle" alignment-baseline="central" x="40" y="8" class="border-icon">o</text> <text text-anchor="middle" alignment-baseline="central" x="8" y="24" class="border-icon">|</text> <text text-anchor="middle" alignment-baseline="central" x="40" y="24" class="border-icon">|</text> <text text-anchor="middle" alignment-baseline="central" x="8" y="40" class="border-icon">o</text> <text text-anchor="middle" alignment-baseline="central" x="24" y="40" class="border-icon">-</text> <text text-anchor="middle" alignment-baseline="central" x="40" y="40" class="border-icon">o</text> </svg>');
+    border-image-slice: 16 18 16 18;
+    border-image-repeat: space;
+}
+
+.border-icon {
+    line-height: 1;
+    font-size: var(--font-size);
 }
