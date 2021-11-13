@@ -1,6 +1,10 @@
 /.idea
 /_site
 
+# Content
+src/walkthroughs
+!src/walkthroughs/walkthroughs.json
+
 # Local Dev files
 .env
 .env.local
