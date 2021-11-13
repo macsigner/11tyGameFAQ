@@ -165,17 +165,6 @@ body,
     margin-left: auto;
 }
 
-body {
-    display: flex;
-    flex-wrap: wrap;
-    min-height: 100vh;
-    align-items: flex-start;
-}
-
-main {
-    min-width: 0;
-}
-
 /*
  * Header styling
  */
@@ -184,37 +173,9 @@ body > header > p {
     text-transform: uppercase;
 }
 
-body > header nav {
-    margin-left: auto;
-}
-
-body > header nav ul {
-    display: flex;
-    margin-bottom: 0;
-}
-
-body > header nav li + li {
-    margin-left: 2rem;
-}
-
-body > header nav a {
-    display: block;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
 /*
  * Footer styling
  */
-body > footer {
-    display: flex;
-    justify-content: space-between;
-}
-
-body > footer h5 {
-    margin-top: 0;
-    text-transform: uppercase;
-}
 
 .main-header {
     display: flex;
