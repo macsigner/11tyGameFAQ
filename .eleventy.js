@@ -5,6 +5,8 @@ const pluginTOC = require('eleventy-plugin-toc')
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginTOC);
+    // Disable ignoring files to keep walkthrough content seperate
+    eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setLibrary(
         'md',
         markdownIt().use(markdownItAnchor)
