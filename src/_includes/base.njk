@@ -19,13 +19,13 @@
     <ul>
         <li><a href="/" accesskey="h">Home</a></li>
         {% for page in collections.pages %}
-            <li><a href="{{ page.url }}" data-title="{{ page.data.title }}"{% if page.data.accesskey %} accesskey="{{ page.data.accesskey }}" {% endif %}>{{ page.data.title }}</a></li>
-        {%- endfor %}
-        {% for walkthrough in collections.walkthroughs %}
             <li>
-                <a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a>
+                <a href="{{ page.url }}" {% if page.data.accesskey %} accesskey="{{ page.data.accesskey }}" {% endif %}>{{ page.data.title }}</a>
             </li>
         {%- endfor %}
+        <li>
+            <a href="#" accesskey="t">To top</a>
+        </li>
     </ul>
 </nav>
 <main class="table-list">
