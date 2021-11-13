@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schofseckel | {{ pageTitle }}</title>
+    <title>Walkthroughs | {{ pageTitle }}</title>
     <meta name="robots" content="noindex,nofollow">
     <link rel="stylesheet" href="{{ '/assets/css/reset.css' | url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
@@ -13,21 +13,21 @@
 <header class="main-header">
     {% block header %}
         <p><a href="/">Walkthroughs</a></p>
-        <nav>
-            <ul>
-                <li><a href="./">Home</a></li>
-                {% for page in collections.pages %}
-                    <li><a href="{{ page.url }}" data-title="{{ page.data.title }}">{{ page.data.title }}</a></li>
-                {%- endfor %}
-                {% for walkthrough in collections.walkthroughs %}
-                    <li>
-                        <a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a>
-                    </li>
-                {%- endfor %}
-            </ul>
-        </nav>
     {% endblock %}
 </header>
+<nav class="main-navigation">
+    <ul>
+        <li><a href="/" accesskey="h">Home</a></li>
+        {% for page in collections.pages %}
+            <li><a href="{{ page.url }}" data-title="{{ page.data.title }}">{{ page.data.title }}</a></li>
+        {%- endfor %}
+        {% for walkthrough in collections.walkthroughs %}
+            <li>
+                <a href="{{ walkthrough.url }}" data-title="{{ walkthrough.data.title }}">{{ walkthrough.data.title }}</a>
+            </li>
+        {%- endfor %}
+    </ul>
+</nav>
 <main>
     {% block main %}
         {{ content | safe }}

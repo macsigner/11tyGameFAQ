@@ -157,7 +157,8 @@ address {
  * Main layout.
  */
 
-body {
+body,
+.main-navigation {
     width: calc(100% - 1rem);
     max-width: 60em;
     margin-right: auto;
@@ -220,6 +221,34 @@ body > footer h5 {
     justify-content: space-between;
     align-items: center;
     padding: var(--distance);
+}
+
+.main-navigation {
+    position: fixed;
+    bottom: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: var(--bg-color);
+}
+
+.main-navigation ul {
+    display: grid;
+    grid-template-columns: repeat(6, 17em);
+    grid-column-gap: 1em;
+    margin-bottom: 0;
+}
+
+.main-navigation [accesskey] {
+    display: flex;
+}
+.main-navigation [accesskey]::before {
+    content: '^' attr(accesskey);
+    display: block;
+    vertical-align: middle;
+    margin-right: 1em;
+    text-transform: uppercase;
+    color: var(--bg-color);
+    background-color: var(--color);
 }
 
 .p-block {
