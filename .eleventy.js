@@ -9,7 +9,9 @@ module.exports = function(eleventyConfig) {
         const str = util.inspect(value);
         console.log(str);
     });
-    eleventyConfig.addPlugin(pluginTOC);
+    eleventyConfig.addPlugin(pluginTOC,{
+        'tags': ['h2','h3'],
+    });
     // Disable ignoring files to keep walkthrough content seperate
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.setLibrary(
